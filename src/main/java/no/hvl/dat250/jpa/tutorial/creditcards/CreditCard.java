@@ -19,4 +19,5 @@ public class CreditCard {
     private Integer creditLimit;
     private Integer balance;
     private Bank owningBank;
+    private Pincode pincode;
 }
