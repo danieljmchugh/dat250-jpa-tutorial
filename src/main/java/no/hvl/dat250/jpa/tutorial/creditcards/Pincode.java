@@ -14,7 +14,7 @@ public class Pincode {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String pinCode;
+    private String code;
     private Integer count; 
     
 }

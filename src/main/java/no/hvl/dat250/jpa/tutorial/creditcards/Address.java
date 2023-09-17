@@ -1,6 +1,8 @@
 package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Set;
 import jakarta.persistence.*;
 
 import lombok.Getter;
@@ -17,5 +19,11 @@ public class Address {
     private Long id;
     private String street;
     private Integer number;
-    private Collection<Customer> owners;
+    
+    @ManyToMany(mappedBy = "addresses")
+    private Collection<Customer> owners = new ArrayList<>();;
+
+    public Set getOwners() {
+        return Set.copyOf(owners);
+    }
 }

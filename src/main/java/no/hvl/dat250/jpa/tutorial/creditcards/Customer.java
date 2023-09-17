@@ -1,6 +1,7 @@
 package no.hvl.dat250.jpa.tutorial.creditcards;
 
 import java.util.Collection;
+import java.util.ArrayList;
 import jakarta.persistence.*;
 
 import lombok.Getter;
@@ -17,6 +18,9 @@ public class Customer {
     private Long id;
     private String name;
 
-    private Collection<Address> addresses;
-    private Collection<CreditCard> creditCards;
+    @ManyToMany
+    private Collection<Address> addresses = new ArrayList<>();
+    
+    @ManyToMany
+    private Collection<CreditCard> creditCards = new ArrayList<>();
 }

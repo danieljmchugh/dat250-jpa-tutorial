@@ -18,6 +18,10 @@ public class CreditCard {
     private Integer number;
     private Integer creditLimit;
     private Integer balance;
+    
+    @ManyToOne
     private Bank owningBank;
+    
+    @ManyToOne
     private Pincode pincode;
 }
